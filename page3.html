@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our First Meet 🤍</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@600&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#1b1f3b,#000);
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+/* fade */
+.fade{animation:fadeIn 1.5s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.5;
+}
+
+/* heart pulse */
+.heart{
+  font-size:40px;
+  animation:beat 2s infinite;
+}
+@keyframes beat{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+
+/* card */
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+  padding:45px 35px;
+  border-radius:30px;
+  box-shadow:0 20px 40px rgba(255,0,120,.25);
+  max-width:380px;
+}
+
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:.9;
+}
+
+/* button */
+button{
+  margin-top:25px;
+  padding:14px 36px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff4f9a,#ff2f6d);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,80,150,.6);
+}
+
+button:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body class="fade">
+
+<script>
+for(let i=0;i<60;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+</script>
+
+<div class="card">
+  <div class="heart">🤍</div>
+  <h1>Our First Meet</h1>
+  <p>
+    We didn’t say much that day…<br>
+    but our hearts did.<br><br>
+    Nervous smiles.<br>
+    Silent glances.<br>
+    Something beautiful quietly began.
+  </p>
+
+  <button onclick="next()">Next ✨</button>
+</div>
+
+<script>
+function next(){
+  document.body.style.opacity=0;
+  setTimeout(()=>{window.location='page4.html'},800);
+}
+</script>
+
+</body>
+</html>

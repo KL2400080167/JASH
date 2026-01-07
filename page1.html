@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Story ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@600&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at top,#1b1f3b,#000);
+  font-family:Poppins,sans-serif;
+  overflow:hidden;
+  color:#fff;
+}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{from{opacity:.3}to{opacity:1}}
+
+/* floating hearts */
+.heart{
+  position:absolute;
+  color:#ff6fae;
+  font-size:18px;
+  animation:float 8s linear infinite;
+  opacity:.7;
+}
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
+
+/* moon */
+.moon{
+  position:absolute;
+  top:40px;
+  right:60px;
+  font-size:70px;
+  filter:drop-shadow(0 0 15px #fff);
+}
+
+/* content box */
+.box{
+  background:rgba(255,255,255,.08);
+  padding:45px 35px;
+  border-radius:30px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 40px rgba(255,0,120,.25);
+  animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:16px;
+  opacity:.85;
+}
+
+/* button */
+button{
+  margin-top:25px;
+  padding:14px 38px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff4f9a,#ff2f6d);
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,80,150,.6);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 15px rgba(255,80,150,.5)}
+  50%{box-shadow:0 0 30px rgba(255,80,150,.9)}
+  100%{box-shadow:0 0 15px rgba(255,80,150,.5)}
+}
+
+button:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body>
+
+<div class="moon">🌙</div>
+
+<!-- stars -->
+<script>
+for(let i=0;i<70;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+for(let i=0;i<20;i++){
+  document.write(`<div class="heart" style="left:${Math.random()*100}%;animation-delay:${Math.random()*5}s">💖</div>`);
+}
+</script>
+
+<div class="box">
+  <h1>❤️ Our Love Story</h1>
+  <p>4 months.<br>One beautiful journey written by fate.</p>
+  <button onclick="location.href='page2.html'">Start ✨</button>
+</div>
+
+</body>
+</html>

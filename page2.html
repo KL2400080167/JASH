@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>We Were Teammates 💬</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#1b1f3b,#000);
+  font-family:Poppins,sans-serif;
+  overflow:hidden;
+  color:#fff;
+}
+
+/* fade transition */
+.fade{
+  animation:fadeIn 1.5s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.6;
+}
+
+/* moon */
+.moon{
+  position:absolute;
+  top:30px;
+  right:50px;
+  font-size:60px;
+  filter:drop-shadow(0 0 15px #fff);
+}
+
+/* chat container */
+.chat-box{
+  width:90%;
+  max-width:380px;
+  margin:80px auto;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+  border-radius:25px;
+  padding:20px;
+  box-shadow:0 15px 35px rgba(255,0,120,.3);
+}
+
+/* title */
+.title{
+  text-align:center;
+  font-size:18px;
+  opacity:.85;
+  margin-bottom:15px;
+}
+
+/* chat bubbles */
+.msg{
+  max-width:75%;
+  padding:10px 14px;
+  margin:8px 0;
+  border-radius:18px;
+  font-size:14px;
+  animation:pop 1s ease;
+}
+
+.left{
+  background:#2a2f4f;
+  border-bottom-left-radius:5px;
+}
+
+.right{
+  background:#ff4f9a;
+  margin-left:auto;
+  border-bottom-right-radius:5px;
+  color:#fff;
+}
+
+@keyframes pop{
+  from{opacity:0;transform:scale(.8)}
+  to{opacity:1;transform:scale(1)}
+}
+
+/* next button */
+.next{
+  display:block;
+  margin:25px auto 5px;
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#ff4f9a,#ff2f6d);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,80,150,.6);
+}
+
+.next:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body class="fade">
+
+<div class="moon">🌙</div>
+
+<!-- stars -->
+<script>
+for(let i=0;i<60;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+</script>
+
+<div class="chat-box">
+  <div class="title">💬 We were teammates</div>
+
+  <div class="msg left">Hi… we’re in the same team, right?</div>
+  <div class="msg right">Yes 😅 looks like we are</div>
+
+  <div class="msg left">Should we discuss the project?</div>
+  <div class="msg right">Yeah sure, let’s do it together</div>
+
+  <div class="msg left">Okay… teammate 🤍</div>
+
+  <button class="next" onclick="goNext()">Next ✨</button>
+</div>
+
+<script>
+function goNext(){
+  document.body.style.opacity = 0;
+  setTimeout(()=>{window.location='page3.html'},800);
+}
+</script>
+
+</body>
+</html>

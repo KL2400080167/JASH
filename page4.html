@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Late Night Prep 🌙</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@600&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#0f1226,#000);
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* fade */
+.fade{animation:fadeIn 1.5s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.5;
+}
+
+/* glow moon */
+.moon{
+  position:absolute;
+  top:40px;
+  left:40px;
+  font-size:60px;
+  filter:drop-shadow(0 0 20px #fff);
+}
+
+/* container */
+.card{
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(14px);
+  padding:40px 30px;
+  border-radius:30px;
+  box-shadow:0 20px 40px rgba(100,150,255,.25);
+  max-width:380px;
+  text-align:center;
+}
+
+/* title */
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+/* call bubbles */
+.call{
+  background:#1f244a;
+  padding:12px 16px;
+  border-radius:18px;
+  margin:12px 0;
+  font-size:14px;
+  animation:pop 1s ease;
+}
+
+.call.you{
+  background:#ff4f9a;
+}
+
+@keyframes pop{
+  from{opacity:0;transform:scale(.85)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.text{
+  font-size:15px;
+  line-height:1.6;
+  margin-top:15px;
+  opacity:.9;
+}
+
+/* next button */
+button{
+  margin-top:25px;
+  padding:14px 36px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff4f9a,#ff2f6d);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,80,150,.6);
+}
+
+button:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body class="fade">
+
+<div class="moon">🌙</div>
+
+<!-- stars -->
+<script>
+for(let i=0;i<70;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+</script>
+
+<div class="card">
+  <h1>Late-Night Prep</h1>
+
+  <div class="call">📞 “Are you studying?”</div>
+  <div class="call you">📞 “Yes… but I’m sleepy”</div>
+  <div class="call">📞 “Just a little more… I’m here”</div>
+
+  <div class="text">
+    Nights became shorter.<br>
+    Exams became easier.<br><br>
+    Because somehow…<br>
+    studying together felt comforting.<br>
+    And silence didn’t feel lonely anymore.
+  </div>
+
+  <button onclick="next()">Next ✨</button>
+</div>
+
+<script>
+function next(){
+  document.body.style.opacity=0;
+  setTimeout(()=>{window.location='page5.html'},800);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Missing You 🥺</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@600&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#0b0f24,#000);
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* fade */
+.fade{animation:fadeIn 1.6s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.4;
+}
+
+/* slow floating hearts */
+.heart{
+  position:absolute;
+  font-size:20px;
+  opacity:.5;
+  animation:float 10s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
+
+/* card */
+.card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(14px);
+  padding:42px 34px;
+  border-radius:32px;
+  box-shadow:0 20px 40px rgba(255,120,120,.25);
+  max-width:380px;
+  text-align:center;
+}
+
+/* title */
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+/* text */
+p{
+  font-size:15px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* separation line */
+.line{
+  width:60px;
+  height:2px;
+  background:#ff6fae;
+  margin:15px auto;
+  border-radius:5px;
+}
+
+/* button */
+button{
+  margin-top:25px;
+  padding:14px 36px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff4f9a,#ff2f6d);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,80,150,.6);
+}
+
+button:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body class="fade">
+
+<!-- stars -->
+<script>
+for(let i=0;i<70;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+for(let i=0;i<15;i++){
+  document.write(`<div class="heart" style="left:${Math.random()*100}%;animation-delay:${Math.random()*5}s">🎀         ❤️</div>`);
+}
+</script>
+
+<div class="card">
+  <h1>Missing You</h1>
+  <div class="line"></div>
+
+  <p>
+    Different places.<br>
+    Different nights.<br><br>
+    Hostel rooms felt colder.<br>
+    Home felt quieter.<br><br>
+    We didn’t talk much…<br>
+    but somehow,<br>
+    you were always on my mind.
+  </p>
+
+  <button onclick="next()">Next ✨</button>
+</div>
+
+<script>
+function next(){
+  document.body.style.opacity=0;
+  setTimeout(()=>{window.location='page6.html'},800);
+}
+</script>
+
+</body>
+</html>

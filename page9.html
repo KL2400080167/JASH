@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Under the Same Moon 🌕</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@600&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#1a163f,#000);
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* fade */
+.fade{animation:fadeIn 2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.4;
+}
+
+/* moon */
+.moon{
+  position:absolute;
+  top:50px;
+  right:60px;
+  font-size:80px;
+  filter:drop-shadow(0 0 25px #fff);
+}
+
+/* train */
+.train{
+  position:absolute;
+  bottom:50px;
+  left:-200px;
+  font-size:60px;
+  animation:trainMove 18s linear infinite;
+}
+@keyframes trainMove{
+  from{left:-200px}
+  to{left:110%}
+}
+
+/* card */
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);
+  padding:45px 36px;
+  border-radius:34px;
+  box-shadow:0 30px 60px rgba(200,200,255,.35);
+  max-width:380px;
+  text-align:center;
+}
+
+/* title */
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+/* text */
+p{
+  font-size:15px;
+  line-height:1.8;
+  opacity:.95;
+}
+
+/* divider */
+.line{
+  width:70px;
+  height:2px;
+  background:#ffd1ec;
+  margin:15px auto;
+  border-radius:5px;
+}
+
+/* button */
+button{
+  margin-top:25px;
+  padding:14px 36px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff8acb,#ff4f9a);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 30px rgba(255,160,220,.8);
+}
+
+button:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body class="fade">
+
+<div class="moon">🌕</div>
+<div class="train">🚆</div>
+
+<!-- stars -->
+<script>
+for(let i=0;i<80;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+</script>
+
+<div class="card">
+  <h1>Under the Same Moon</h1>
+  <div class="line"></div>
+
+  <p>
+    A full moon above us.<br>
+    A train passing by.<br><br>
+    Time stood still,<br>
+    while the world kept moving.<br><br>
+    In that moment…<br>
+    I knew this was more than just love.<br>
+    It was us.
+  </p>
+
+  <button onclick="next()">Next ✨</button>
+</div>
+
+<script>
+function next(){
+  document.body.style.opacity=0;
+  setTimeout(()=>{window.location='page10.html'},900);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Only For You ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box;font-family:Poppins,sans-serif}
+
+/* NIGHT BACKGROUND */
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:radial-gradient(circle at top,#2b1055,#12001f 70%);
+  overflow:hidden;
+  color:#fff;
+}
+
+/* STARS */
+.star{
+  position:absolute;
+  background:white;
+  width:2px;height:2px;
+  border-radius:50%;
+  opacity:.8;
+  animation:twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle{
+  0%,100%{opacity:.3}
+  50%{opacity:1}
+}
+
+/* FLOATING MOON HEARTS */
+.heart{
+  position:absolute;
+  bottom:-20px;
+  font-size:18px;
+  animation:float 9s linear infinite;
+  opacity:.7;
+}
+@keyframes float{
+  0%{transform:translateY(0);opacity:0}
+  10%{opacity:1}
+  100%{transform:translateY(-120vh);opacity:0}
+}
+
+/* LOCK BOX */
+.box{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  padding:34px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(255,79,122,.35);
+  width:320px;
+  animation:pop 1.2s ease forwards;
+}
+@keyframes pop{
+  0%{transform:scale(.6);opacity:0}
+  100%{transform:scale(1);opacity:1}
+}
+
+h2{color:#ff8fb1;margin-bottom:8px}
+
+/* INPUT */
+input{
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(255,143,177,.6);
+  width:100%;
+  margin-top:14px;
+  text-align:center;
+  font-size:14px;
+  outline:none;
+  background:rgba(0,0,0,.3);
+  color:white;
+  transition:.3s;
+}
+input::placeholder{color:#ffd6e5}
+input:focus{
+  box-shadow:0 0 18px rgba(255,143,177,.8);
+  border-color:#ff8fb1;
+}
+
+/* BUTTON */
+button{
+  margin-top:20px;
+  padding:12px 32px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff5f9e,#ff2f68);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  transition:.4s;
+}
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 25px rgba(255,95,158,.7);
+}
+
+/* ERROR */
+#error{margin-top:12px;color:#ff9dbd;font-size:13px;animation:shake .4s}
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-5px)}100%{transform:translateX(0)}}
+</style>
+
+<script>
+function unlock(){
+  const p=document.getElementById('p').value.replace(/\s+/g,'').toLowerCase();
+  const e=document.getElementById('error');
+  e.innerHTML='';
+
+  if(p==='sep12025'){
+    document.querySelector('.box').style.animation='pop .6s reverse forwards';
+    setTimeout(()=>window.location='page1.html',600);
+  }else{
+    e.innerHTML='✨ Not yet… try again my love';
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- STARS -->
+<div class="star" style="top:10%;left:20%"></div>
+<div class="star" style="top:30%;left:70%"></div>
+<div class="star" style="top:60%;left:40%"></div>
+<div class="star" style="top:80%;left:80%"></div>
+
+<!-- FLOATING HEARTS -->
+<span class="heart" style="left:15%;animation-delay:0s">💖</span>
+<span class="heart" style="left:35%;animation-delay:2s">🌙</span>
+<span class="heart" style="left:55%;animation-delay:4s">💞</span>
+<span class="heart" style="left:75%;animation-delay:1s">✨</span>
+
+<!-- LOCK BOX -->
+<div class="box">
+  <h2>🔒 Only For You</h2>
+  <p>Enter our secret 💗</p>
+  <input id="p" placeholder="Hint: the night everything changed ❤️">
+  <div id="error"></div>
+  <button onclick="unlock()">Unlock 💕</button>
+</div>
+
+</body>
+</html>

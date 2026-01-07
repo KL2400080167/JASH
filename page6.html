@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Becoming Close 💞</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Dancing+Script:wght@600&display=swap');
+
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#14163d,#000);
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* fade */
+.fade{animation:fadeIn 1.6s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.5;
+}
+
+/* floating hearts */
+.heart{
+  position:absolute;
+  font-size:22px;
+  opacity:.6;
+  animation:float 9s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
+
+/* card */
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);
+  padding:42px 34px;
+  border-radius:32px;
+  box-shadow:0 20px 40px rgba(255,120,200,.35);
+  max-width:380px;
+  text-align:center;
+}
+
+/* title */
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+/* text */
+p{
+  font-size:15px;
+  line-height:1.7;
+  opacity:.95;
+}
+
+/* divider */
+.line{
+  width:60px;
+  height:2px;
+  background:#ff8fc4;
+  margin:15px auto;
+  border-radius:5px;
+}
+
+/* button */
+button{
+  margin-top:25px;
+  padding:14px 36px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff5fa2,#ff2f6d);
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,120,200,.7);
+}
+
+button:hover{transform:scale(1.05)}
+</style>
+</head>
+
+<body class="fade">
+
+<!-- stars & hearts -->
+<script>
+for(let i=0;i<70;i++){
+  document.write(`<div class="star" style="top:${Math.random()*100}%;left:${Math.random()*100}%"></div>`);
+}
+for(let i=0;i<18;i++){
+  document.write(`<div class="heart" style="left:${Math.random()*100}%;animation-delay:${Math.random()*6}s">💞</div>`);
+}
+</script>
+
+<div class="card">
+  <h1>Becoming Close</h1>
+  <div class="line"></div>
+
+  <p>
+    Laughter in the middle of lectures.<br>
+    Messages sent when no one noticed.<br><br>
+    We shared stories,<br>
+    fears,<br>
+    and quiet emotions.<br><br>
+    Somewhere between those moments…<br>
+    my heart chose you.
+  </p>
+
+  <button onclick="next()">Next ✨</button>
+</div>
+
+<script>
+function next(){
+  document.body.style.opacity=0;
+  setTimeout(()=>{window.location='page7.html'},800);
+}
+</script>
+
+</body>
+</html>
